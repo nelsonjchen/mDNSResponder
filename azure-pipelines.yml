@@ -36,6 +36,11 @@ jobs:
     inputs:
       solution: build\dnssd.sln
       configuration: $(BUILD_CONFIGURATION)
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: build\dnssd.dir\$(BUILD_CONFIGURATION)
+      contents: '*.pdb'
+      targetFolder: build\$(BUILD_CONFIGURATION)
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: build\$(BUILD_CONFIGURATION)

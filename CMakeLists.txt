@@ -43,7 +43,7 @@ target_compile_definitions(dnssd PRIVATE
 )
 
 target_link_libraries(dnssd
-  ws2_32.lib)
+  PRIVATE ws2_32.lib)
 
 
 include(CMakePackageConfigHelpers)

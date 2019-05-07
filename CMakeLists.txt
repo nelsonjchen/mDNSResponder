@@ -4,10 +4,6 @@ project(dnssd LANGUAGES C CXX)
 
 set(dnssd_VERSION 576.30.4)
 
-if(MSVC)
-  set(CMAKE_DEBUG_POSTFIX "d")
-endif()
-
 
 add_library(dnssd 
   mDNSShared/CommonServices.h
@@ -43,7 +39,7 @@ target_compile_definitions(dnssd PRIVATE
 )
 
 target_link_libraries(dnssd
-  ws2_32.lib)
+  PRIVATE ws2_32.lib)
 
 
 include(CMakePackageConfigHelpers)

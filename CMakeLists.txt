@@ -4,22 +4,10 @@ project(dnssd LANGUAGES C CXX)
 
 set(dnssd_VERSION 576.30.4)
 
-
-add_library(dnssd 
-  mDNSShared/CommonServices.h
-  mDNSShared/DebugServices.h
-  mDNSShared/DebugServices.c
+add_library(dnssd
   mDNSShared/dns_sd.h
-  mDNSShared/dnssd_ipc.h
-  mDNSShared/dnssd_ipc.c
-  mDNSShared/dnssd_clientlib.c
-  mDNSShared/dnssd_clientstub.c
-  mDNSShared/GenLinkedList.h
-  mDNSShared/GenLinkedList.c
-  mDNSWindows/DLL/dll.rc
-  mDNSWindows/DLL/dllmain.c
-  mDNSWindows/DLL/dnssd.def
-  mDNSWindows/DLL/resource.h
+  mDNSWindows/DLLStub/DLLStub.h
+  mDNSWindows/DLLStub/DLLStub.cpp
 )
 target_include_directories(dnssd
   PRIVATE

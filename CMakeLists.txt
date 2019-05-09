@@ -16,6 +16,8 @@ target_include_directories(dnssd
   $<INSTALL_INTERFACE:include>
 )
 
+target_compile_options(dnssd PRIVATE "/MT")
+
 target_compile_definitions(dnssd PRIVATE
   _USRDLL
   MDNS_DEBUGMSGS=0
